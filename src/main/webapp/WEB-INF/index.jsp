@@ -21,17 +21,23 @@
                 Main page for this 2. semester start project used at cphbusiness.dk
             </div>
 
-            <c:if test="${sessionScope.role == 'employee' }">
+            <c:if test="${sessionScope.role == 'teacher' }">
                 <p style="font-size: larger">This is what you can do,
-                    since your are logged in as an employee</p>
-                 <p><a href="fc/employeepage">Employee Page</a>
+                    since your are logged in as an teacher</p>
+                 <p><a href="fc/teacherpage">Teacher Page</a>
              </c:if>
 
-             <c:if test="${sessionScope.role == 'customer' }">
+             <c:if test="${sessionScope.role == 'student' }">
                 <p style="font-size: larger">This is what you can do, since your
-                    are logged in as a customer</p>
-                <p><a href="fc/customerpage">Customer Page</a>
+                    are logged in as a student</p>
+                <p><a href="fc/studentpage">Student Page</a>
             </c:if>
+
+                    <c:if test="${sessionScope.role == 'admin' }">
+            <p style="font-size: larger">This is what you can do, since your
+                are logged in as a admin</p>
+            <p><a href="fc/adminpage">Admin Page</a>
+                </c:if>
 
         </div>
 
