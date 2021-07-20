@@ -26,4 +26,9 @@ public class UserFacade
         return user;
     }
 
+    public void useCredit(int credit, int user_id)throws UserException
+    {
+        userMapper.useCredit(credit, user_id);
+    }
+
 }
