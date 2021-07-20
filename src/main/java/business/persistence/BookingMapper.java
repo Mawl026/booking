@@ -11,7 +11,7 @@ public class BookingMapper {
         this.database = database;
 
     }
-    public Booking bookItem(Booking booking)throws UserException{
+    public Booking bookAnItem(Booking booking)throws UserException{
         try(Connection connection = database.connect()){
             String sql = "insert into booking set days = ?, booking_date = ?, booking_status = ?, fk_user_id = ?, fk_item_id = ?";
             try(PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)){
