@@ -110,4 +110,24 @@ public class UserMapper
     }
 
 
+    public int useCredit(int credit, int user_id) {
+
+            try (Connection connection = database.connect()) {
+                String sql = "update user set credit = credit - ? where user_id = ?";
+
+                try (PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
+                    ps.setInt(1, credit);
+                    ps.setInt(2, user_id);
+                    ps.executeUpdate();
+
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+            return credit;
+
+    }
 }
