@@ -14,7 +14,7 @@ public class ItemFacade {
         this.itemMapper = new ItemMapper(database);
     }
 
-    public List<Item> listOfItems() throws UserException{
+    public List<Item> listOfItems() throws UserException {
         return itemMapper.listOfItems();
     }
 }
