@@ -19,7 +19,7 @@ public class UserMapper {
 
 
 
-    public void createUser(User user) throws UserException {
+    public User createUser(User user) throws UserException {
 
         try (Connection connection = database.connect()) {
 
@@ -36,8 +36,9 @@ public class UserMapper {
                 ResultSet ids = ps.getGeneratedKeys();
                 ids.next();
 
-                int id = ids.getInt(1);
-                user.setUser_id(id);
+
+//                int id = ids.getInt(1);
+//                user.setUser_id(id);
 
             }
 
@@ -51,6 +52,7 @@ public class UserMapper {
             throw new UserException(ex.getMessage());
 
         }
+        return user;
     }
 
 
