@@ -31,6 +31,7 @@ public class UserMapper {
                 ps.setInt(3, user.getPhone());
                 ps.setInt(4, user.getCredit());
                 ps.setString(5, user.getRole());
+
                 ps.executeUpdate();
                 ResultSet ids = ps.getGeneratedKeys();
                 ids.next();
