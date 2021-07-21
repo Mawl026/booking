@@ -3,16 +3,16 @@ package business.entities;
 public class Booking {
     private int booking_id;
     private String booking_date;
-    private int days;
-    private String comment;
+    private int booking_days;
+    private String booking_comment;
     private boolean booking_status;
     private int user_id;
     private int item_id;
 
     public Booking(String booking_date, int days, String comment, boolean booking_status, int user_id, int item_id) {
         this.booking_date = booking_date;
-        this.days = days;
-        this.comment = comment;
+        this.booking_days = days;
+        this.booking_comment = comment;
         this.booking_status = booking_status;
         this.user_id = user_id;
         this.item_id = item_id;
@@ -34,20 +34,20 @@ public class Booking {
         this.booking_date = booking_date;
     }
 
-    public int getDays() {
-        return days;
+    public int getBooking_days() {
+        return booking_days;
     }
 
-    public void setDays(int days) {
-        this.days = days;
+    public void setBooking_days(int days) {
+        this.booking_days = days;
     }
 
-    public String getComment() {
-        return comment;
+    public String getBooking_comment() {
+        return booking_comment;
     }
 
-    public void setComment(String comment) {
-        this.comment = comment;
+    public void setBooking_comment(String comment) {
+        this.booking_comment = comment;
     }
 
     public boolean isBooking_status() {
