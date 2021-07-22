@@ -15,7 +15,6 @@ import java.time.LocalDate;
 public class CreateBookingCommand extends CommandProtectedPage {
     UserFacade userFacade;
     UserMapper userMapper;
-    // BookingFacade getCreateBookingFacade;
 
     BookingFacade createBookingFacade = new BookingFacade(database);
 
@@ -55,6 +54,7 @@ public class CreateBookingCommand extends CommandProtectedPage {
         userFacade.useCredit(booking_days, user_id);
         request.setAttribute("booking", createBooking);
 
-        return super.execute(request, response);
+        return pageToShow;
+        // return super.execute(request, response); ?
     }
 }
