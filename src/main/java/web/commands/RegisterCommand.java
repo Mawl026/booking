@@ -28,16 +28,21 @@ public class RegisterCommand extends CommandProtectedPage {
         int credit = Integer.parseInt(request.getParameter("credit"));
         String role = request.getParameter("role");
 
+
         if (password1.equals(password2)) {
 
-            User user = userFacade.createUser(email, password1, 0,0, role);
             HttpSession session = request.getSession();
+
+            User user = userFacade.createUser(email, password1, 0,0, role);
 
             session.setAttribute("email", email);
             session.setAttribute("password", password1);
             session.setAttribute("phone", phone);
             session.setAttribute("credit", credit);
             session.setAttribute("role", role); // or maybe user.getRole(); idk.
+
+
+            request.setAttribute("createUser", user);
 
             //return user.getRole() + "page";
             return pageToShow;
