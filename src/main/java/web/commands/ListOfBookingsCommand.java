@@ -6,11 +6,11 @@ import business.services.BookingFacade;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class ShowBookingsCommand extends CommandProtectedPage {
+public class ListOfBookingsCommand extends CommandProtectedPage {
 
     BookingFacade bookingFacade;
 
-    public ShowBookingsCommand(String pageToShow, String role) {
+    public ListOfBookingsCommand(String pageToShow, String role) {
         super(pageToShow, role);
         bookingFacade = new BookingFacade(database);
     }
