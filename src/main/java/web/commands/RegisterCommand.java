@@ -9,13 +9,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-public class RegisterCommand extends CommandUnprotectedPage
-{
+public class RegisterCommand extends CommandProtectedPage {
     private UserFacade userFacade;
 
-    public RegisterCommand(String pageToShow)
+    public RegisterCommand(String pageToShow, String role)
     {
-        super(pageToShow);
+        super(pageToShow, role);
         userFacade = new UserFacade(database);
     }
 
