@@ -24,10 +24,10 @@ public abstract class Command
         commands.put("loginpage", new CommandUnprotectedPage("loginpage"));
         commands.put("logincommand", new LoginCommand(""));
         commands.put("logoutcommand", new LogoutCommand(""));
-        commands.put("registerpage", new CommandUnprotectedPage("registerpage"));
-        commands.put("registercommand", new RegisterCommand(""));
-        commands.put("customerpage", new CommandProtectedPage("customerpage", "customer"));
-        commands.put("employeepage", new CommandProtectedPage("employeepage", "employee"));
+        commands.put("registerpage", new CommandProtectedPage("registerpage", "teacher"));
+        commands.put("registercommand", new RegisterCommand("","teacher"));
+        commands.put("customerpage", new CommandProtectedPage("studentpage", "student"));
+        commands.put("employeepage", new CommandProtectedPage("teacherpage", "teacher"));
     }
 
     public static Command fromPath(
