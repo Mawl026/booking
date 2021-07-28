@@ -19,26 +19,35 @@ public class RegisterCommand extends CommandProtectedPage {
     }
 
     @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response) throws UserException
-    {
+    public String execute(HttpServletRequest request, HttpServletResponse response) throws UserException {
+
         String email = request.getParameter("email");
         String password1 = request.getParameter("password1");
         String password2 = request.getParameter("password2");
+        int phone = Integer.parseInt(request.getParameter("phone"));
+        int credit = Integer.parseInt(request.getParameter("credit"));
         String role = request.getParameter("role");
 
-        if (password1.equals(password2))
-        {
+        if (password1.equals(password2)) {
+
             User user = userFacade.createUser(email, password1, 0,0, role);
             HttpSession session = request.getSession();
 
             session.setAttribute("email", email);
-            session.setAttribute("user", user);
-            session.setAttribute("role", user.getRole());
-            return user.getRole() + "page";
+            session.setAttribute("password", password1);
+            session.setAttribute("phone", phone);
+            session.setAttribute("credit", credit);
+            session.setAttribute("role", role); // or maybe user.getRole(); idk.
+
+            //return user.getRole() + "page";
+            return pageToShow;
+
         }
-        else
-        {
+
+
+        else {
             request.setAttribute("error", "the two passwords did not match");
+
             return "registerpage";
         }
     }
