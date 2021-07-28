@@ -46,11 +46,10 @@ public class CreateBookingCommand extends CommandProtectedPage {
 
         }
 
-        LocalDate booking_date = LocalDate.now(); // .plusDays(days);
+        LocalDate booking_date = LocalDate.now(); // .plusDays(days); ?
 
         String booking_comment = request.getParameter("comment");
         Booking createBooking = createBookingFacade.createBooking(String.valueOf(booking_date), booking_days, booking_comment, booking_status, user_id, item_id);
-        // call a method in the UserMapper by name: useCredit(int credit)
         userFacade.useCredit(booking_days, user_id);
         request.setAttribute("booking", createBooking);
 
