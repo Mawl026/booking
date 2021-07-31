@@ -4,7 +4,7 @@
 
 <t:genericpage>
     <jsp:attribute name="header">
-         Login page
+         List Of Items Page.
     </jsp:attribute>
 
     <jsp:attribute name="footer">
