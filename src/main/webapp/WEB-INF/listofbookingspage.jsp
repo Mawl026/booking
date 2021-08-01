@@ -32,9 +32,11 @@
                 <tr>
                     <td>${booking.booking_id}</td>
                     <td>${booking.booking_date}</td>
-                    <td>${booking.}</td>
-                    <td>${item.item_type}</td>
-                    <td>${item.fk_room_number}</td>
+                    <td>${booking.booking_days}</td>
+                    <td>${booking.booking_comment}</td>
+                    <td>${booking.booking_status}</td>
+                    <td>${booking.fk_user_id}</td>
+                    <td>${booking.fk_item_id}</td>
                 </tr>
             </c:forEach>
             </tbody>
