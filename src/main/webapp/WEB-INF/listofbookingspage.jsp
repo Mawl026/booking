@@ -19,12 +19,12 @@
             <thead>
             <tr>
                 <th scope="col">Booking ID</th>
-                <th scope="col">Date</th>
-                <th scope="col">Days</th>
-                <th scope="col">Comment</th>
+                <th scope="col">Dato</th>
+                <th scope="col">Dage</th>
+                <th scope="col">Kommentar</th>
                 <th scope="col">Status</th>
-                <th scope="col">User ID</th>
-                <th scope="col">Item ID</th>
+                <th scope="col">Bruger ID</th>
+                <th scope="col">Udstyr ID</th>
             </tr>
             </thead>
             <tbody>

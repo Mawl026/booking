@@ -20,7 +20,7 @@
             <tr>
                 <th scope="col">Student ID</th>
                 <th scope="col">Email</th>
-                <th scope="col">Phone</th>
+                <th scope="col">Telefon</th>
                 <th scope="col">Credit</th>
                 <th scope="col">Rolle</th>
             </tr>
@@ -29,10 +29,10 @@
             <c:forEach var="user" items="${requestScope.user}">
                 <tr>
                     <td>${user.user_id}</td>
-                    <td>${user.email}</td>
-                    <td>${user.phone}</td>
-                    <td>${user.credit}</td>
-                    <td>${user.role}</td>
+                    <td>${user.user_email}</td>
+                    <td>${user.user_phone}</td>
+                    <td>${user.user_credit}</td>
+                    <td>${user.user_role}</td>
                 </tr>
             </c:forEach>
             </tbody>

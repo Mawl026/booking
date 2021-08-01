@@ -18,11 +18,11 @@
         <table class="table mt-5">
             <thead>
             <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Name</th>
-                <th scope="col">Description</th>
+                <th scope="col">Udstyr ID</th>
+                <th scope="col">Navn</th>
+                <th scope="col">Beskrivelse</th>
                 <th scope="col">Type</th>
-                <th scope="col">Room Number</th>
+                <th scope="col">Rum Nummer</th>
             </tr>
             </thead>
             <tbody>
