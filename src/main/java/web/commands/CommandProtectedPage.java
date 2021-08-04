@@ -8,13 +8,13 @@ import javax.servlet.http.HttpSession;
 
 public class CommandProtectedPage extends Command
 {
-    public String role;
+    public String user_role;
     public String pageToShow;
 
     public CommandProtectedPage(String pageToShow, String role)
     {
         this.pageToShow = pageToShow;
-        this.role = role;
+        this.user_role = role;
 
     }
 
@@ -23,8 +23,8 @@ public class CommandProtectedPage extends Command
         return pageToShow;
     }
 
-    public String getRole()
+    public String getUser_role()
     {
-        return role;
+        return user_role;
     }
 }

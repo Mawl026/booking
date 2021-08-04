@@ -40,7 +40,7 @@ public class AuthorizationFilter implements Filter
             HttpSession session = req.getSession(false);
             if (command instanceof CommandProtectedPage)
             {
-                String roleFromCommand = ((CommandProtectedPage) command).getRole();
+                String roleFromCommand = ((CommandProtectedPage) command).getUser_role();
                 if (session == null || session.getAttribute("user") == null)
                 {
                     handleIllegalAccess(
@@ -52,8 +52,8 @@ public class AuthorizationFilter implements Filter
                     return;
                 } else
                 {
-                    String role = (String) session.getAttribute("user_role");
-                    if (role == null || !role.equals(roleFromCommand))
+                    String user_role = (String) session.getAttribute("user_role");
+                    if (user_role == null || !user_role.equals(roleFromCommand))
                     {
                         handleIllegalAccess(
                                 req,
