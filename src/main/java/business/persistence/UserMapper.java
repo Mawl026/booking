@@ -23,7 +23,7 @@ public class UserMapper {
 
         try (Connection connection = database.connect()) {
 
-            String sql = "INSERT INTO user (email, password, phone, credit, role) VALUES (?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO user (user_email, user_password, user_phone, user_credit, user_role) VALUES (?, ?, ?, ?, ?)";
 
             try (PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
                 ps.setString(1, user.getEmail());
@@ -57,20 +57,20 @@ public class UserMapper {
 
 
 
-    public User login(String email, String password) throws UserException {
+    public User login(String user_email, String user_password) throws UserException {
 
         try (Connection connection = database.connect()) {
-            String sql = "SELECT id, role FROM users WHERE email=? AND password=?";
+            String sql = "SELECT user_id, user_role FROM users WHERE user_email=? AND user_password=?";
 
             try (PreparedStatement ps = connection.prepareStatement(sql)) {
-                ps.setString(1, email);
-                ps.setString(2, password);
+                ps.setString(1, user_email);
+                ps.setString(2, user_password);
                 ResultSet rs = ps.executeQuery();
 
                 if (rs.next()) {
-                    String role = rs.getString("user_role");
+                    String user_role = rs.getString("user_role");
                     int id = rs.getInt("user_id");
-                    User user = new User(email, password,0,0, role);
+                    User user = new User(user_email, user_password,0,0, user_role);
                     user.setUser_id(id);
                     return user;
 
@@ -100,19 +100,19 @@ public class UserMapper {
         List<User> listOfStudents = new ArrayList<>();
 
         try (Connection connection = database.connect()) {
-            String sql = "SELECT * FROM user WHERE role='student'";
+            String sql = "SELECT * FROM user WHERE user_role='student'";
 
             try (PreparedStatement ps = connection.prepareStatement(sql)) {
                 ResultSet rs = ps.executeQuery();
 
                 while (rs.next()) {
                     int user_id = rs.getInt("user_id");
-                    String email = rs.getString("user_email");
-                    String password = rs.getString("user_password");
-                    int phone = rs.getInt("user_phone");
-                    int credit = rs.getInt("user_credit");
-                    String role = rs.getString("user_role");
-                    User user = new User(email, password, phone, credit, role);
+                    String user_email = rs.getString("user_email");
+                    String user_password = rs.getString("user_password");
+                    int user_phone = rs.getInt("user_phone");
+                    int user_credit = rs.getInt("user_credit");
+                    String user_role = rs.getString("user_role");
+                    User user = new User(user_email, user_password, user_phone, user_credit, user_role);
                     user.setUser_id(user_id);
                     listOfStudents.add(user);
 
@@ -131,13 +131,13 @@ public class UserMapper {
 
 
 
-    public int useCredit(int credit, int user_id) {
+    public int useCredit(int user_credit, int user_id) {
 
             try (Connection connection = database.connect()) {
-                String sql = "update user set credit = credit - ? where user_id = ?";
+                String sql = "update user set user_credit = user_credit - ? where user_id = ?";
 
                 try (PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
-                    ps.setInt(1, credit);
+                    ps.setInt(1, user_credit);
                     ps.setInt(2, user_id);
                     ps.executeUpdate();
 
@@ -155,6 +155,6 @@ public class UserMapper {
 
             }
 
-            return credit;
+            return user_credit;
     }
 }
