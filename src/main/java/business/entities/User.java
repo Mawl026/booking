@@ -2,18 +2,18 @@ package business.entities;
 
 public class User {
     private int user_id; // just used to demo retrieval of autogen keys in UserMapper
-    private String email;
-    private String password; // Should be hashed and secured
-    private int phone;
-    private int credit;
-    private String role;
+    private String user_mail;
+    private String user_password; // Should be hashed and secured
+    private int user_phone;
+    private int user_credit;
+    private String user_role;
 
-    public User(String email, String password, int phone, int credit, String role) {
-        this.email = email;
-        this.password = password;
-        this.phone = phone;
-        this.credit = credit;
-        this.role = role;
+    public User(String user_mail, String user_password, int user_phone, int user_credit, String user_role) {
+        this.user_mail = user_mail;
+        this.user_password = user_password;
+        this.user_phone = user_phone;
+        this.user_credit = user_credit;
+        this.user_role = user_role;
     }
 
     public int getUser_id() {
@@ -25,42 +25,42 @@ public class User {
     }
 
     public String getEmail() {
-        return email;
+        return user_mail;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEmail(String user_mail) {
+        this.user_mail = user_mail;
     }
 
     public String getPassword() {
-        return password;
+        return user_password;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPassword(String user_password) {
+        this.user_password = user_password;
     }
 
     public int getPhone() {
-        return phone;
+        return user_phone;
     }
 
-    public void setPhone(int phone) {
-        this.phone = phone;
+    public void setPhone(int user_phone) {
+        this.user_phone = user_phone;
     }
 
     public int getCredit() {
-        return credit;
+        return user_credit;
     }
 
-    public void setCredit(int credit) {
-        this.credit = credit;
+    public void setCredit(int user_credit) {
+        this.user_credit = user_credit;
     }
 
     public String getRole() {
-        return role;
+        return user_role;
     }
 
-    public void setRole(String role) {
-        this.role = role;
+    public void setRole(String user_role) {
+        this.user_role = user_role;
     }
 }
