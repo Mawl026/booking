@@ -12,8 +12,8 @@
 
     <jsp:body>
 
-        <h3>Du er logget ind som rolle: ${sessionScope.role}</h3>
-        <h3>Teacher ID: ${sessionScope.id}</h3>
+        <h3>Du er logget ind som rolle: ${sessionScope.user_role}</h3>
+        <h3>Teacher ID: ${sessionScope.user_id}</h3>
 
         <table class="table mt-5">
             <thead>
@@ -26,13 +26,13 @@
             </tr>
             </thead>
             <tbody>
-            <c:forEach var="user" items="${requestScope.user}">
+            <c:forEach var="users" items="${requestScope.listOfStudents}">
                 <tr>
-                    <td>${user.user_id}</td>
-                    <td>${user.user_email}</td>
-                    <td>${user.user_phone}</td>
-                    <td>${user.user_credit}</td>
-                    <td>${user.user_role}</td>
+                    <td>${users.user_id}</td>
+                    <td>${users.user_mail}</td>
+                    <td>${users.user_phone}</td>
+                    <td>${users.user_credit}</td>
+                    <td>${users.user_role}</td>
                 </tr>
             </c:forEach>
             </tbody>

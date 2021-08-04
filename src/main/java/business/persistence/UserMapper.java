@@ -23,14 +23,14 @@ public class UserMapper {
 
         try (Connection connection = database.connect()) {
 
-            String sql = "INSERT INTO user (user_mail, user_password, user_phone, user_credit, user_role) VALUES (?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO users (user_mail, user_password, user_phone, user_credit, user_role) VALUES (?, ?, ?, ?, ?)";
 
             try (PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
-                ps.setString(1, user.getEmail());
-                ps.setString(2, user.getPassword());
-                ps.setInt(3, user.getPhone());
-                ps.setInt(4, user.getCredit());
-                ps.setString(5, user.getRole());
+                ps.setString(1, user.getUser_mail());
+                ps.setString(2, user.getUser_password());
+                ps.setInt(3, user.getUser_phone());
+                ps.setInt(4, user.getUser_credit());
+                ps.setString(5, user.getUser_role());
 
                 ps.executeUpdate();
                 ResultSet ids = ps.getGeneratedKeys();
@@ -100,7 +100,7 @@ public class UserMapper {
         List<User> listOfStudents = new ArrayList<>();
 
         try (Connection connection = database.connect()) {
-            String sql = "SELECT * FROM user WHERE user_role='student'";
+            String sql = "SELECT * FROM users WHERE user_role='student'";
 
             try (PreparedStatement ps = connection.prepareStatement(sql)) {
                 ResultSet rs = ps.executeQuery();

@@ -9,12 +9,12 @@
     <jsp:attribute name="footer">
     </jsp:attribute>
     <jsp:body>
-        <h1>Hello ${sessionScope.email} </h1>
+        <h1>Hello ${sessionScope.user_mail} </h1>
         You are now logged in as a TEACHER of our wonderful site.
 
         <div class="d-flex justify-content-center mt-5">
             <br>
-            <a href="${pageContext.request.contextPath}/fc/listofallstudentspage" type="button" class="btn btn-primary btn-lg ms-5">liste over studerende</a>
+            <a href="${pageContext.request.contextPath}/fc/listofuserspage" type="button" class="btn btn-primary btn-lg ms-5">liste over studerende</a>
         </div>
 
         <div class="d-flex justify-content-center mt-5">

@@ -24,43 +24,43 @@ public class User {
         this.user_id = user_id;
     }
 
-    public String getEmail() {
+    public String getUser_mail() {
         return user_mail;
     }
 
-    public void setEmail(String user_mail) {
+    public void setUser_mail(String user_mail) {
         this.user_mail = user_mail;
     }
 
-    public String getPassword() {
+    public String getUser_password() {
         return user_password;
     }
 
-    public void setPassword(String user_password) {
+    public void setUser_password(String user_password) {
         this.user_password = user_password;
     }
 
-    public int getPhone() {
+    public int getUser_phone() {
         return user_phone;
     }
 
-    public void setPhone(int user_phone) {
+    public void setUser_phone(int user_phone) {
         this.user_phone = user_phone;
     }
 
-    public int getCredit() {
+    public int getUser_credit() {
         return user_credit;
     }
 
-    public void setCredit(int user_credit) {
+    public void setUser_credit(int user_credit) {
         this.user_credit = user_credit;
     }
 
-    public String getRole() {
+    public String getUser_role() {
         return user_role;
     }
 
-    public void setRole(String user_role) {
+    public void setUser_role(String user_role) {
         this.user_role = user_role;
     }
 }
