@@ -11,10 +11,10 @@ public class CommandProtectedPage extends Command
     public String user_role;
     public String pageToShow;
 
-    public CommandProtectedPage(String pageToShow, String role)
+    public CommandProtectedPage(String pageToShow, String user_role)
     {
         this.pageToShow = pageToShow;
-        this.user_role = role;
+        this.user_role = user_role;
 
     }
 
