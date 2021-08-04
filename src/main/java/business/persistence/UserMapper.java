@@ -23,7 +23,7 @@ public class UserMapper {
 
         try (Connection connection = database.connect()) {
 
-            String sql = "INSERT INTO user (user_email, user_password, user_phone, user_credit, user_role) VALUES (?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO user (user_mail, user_password, user_phone, user_credit, user_role) VALUES (?, ?, ?, ?, ?)";
 
             try (PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
                 ps.setString(1, user.getEmail());
@@ -37,8 +37,8 @@ public class UserMapper {
                 ids.next();
 
 
-//                int id = ids.getInt(1);
-//                user.setUser_id(id);
+                int id = ids.getInt(1);
+                user.setUser_id(id);
 
             }
 
@@ -57,20 +57,20 @@ public class UserMapper {
 
 
 
-    public User login(String user_email, String user_password) throws UserException {
+    public User login(String user_mail, String user_password) throws UserException {
 
         try (Connection connection = database.connect()) {
-            String sql = "SELECT user_id, user_role FROM users WHERE user_email=? AND user_password=?";
+            String sql = "SELECT user_id, user_role FROM users WHERE user_mail=? AND user_password=?";
 
             try (PreparedStatement ps = connection.prepareStatement(sql)) {
-                ps.setString(1, user_email);
+                ps.setString(1, user_mail);
                 ps.setString(2, user_password);
                 ResultSet rs = ps.executeQuery();
 
                 if (rs.next()) {
                     String user_role = rs.getString("user_role");
                     int id = rs.getInt("user_id");
-                    User user = new User(user_email, user_password,0,0, user_role);
+                    User user = new User(user_mail, user_password,0,0, user_role);
                     user.setUser_id(id);
                     return user;
 
@@ -107,12 +107,12 @@ public class UserMapper {
 
                 while (rs.next()) {
                     int user_id = rs.getInt("user_id");
-                    String user_email = rs.getString("user_email");
+                    String user_mail = rs.getString("user_mail");
                     String user_password = rs.getString("user_password");
                     int user_phone = rs.getInt("user_phone");
                     int user_credit = rs.getInt("user_credit");
                     String user_role = rs.getString("user_role");
-                    User user = new User(user_email, user_password, user_phone, user_credit, user_role);
+                    User user = new User(user_mail, user_password, user_phone, user_credit, user_role);
                     user.setUser_id(user_id);
                     listOfStudents.add(user);
 
