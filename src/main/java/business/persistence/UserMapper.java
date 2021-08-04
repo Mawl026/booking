@@ -68,7 +68,7 @@ public class UserMapper {
                 ResultSet rs = ps.executeQuery();
 
                 if (rs.next()) {
-                    String role = rs.getString("role");
+                    String role = rs.getString("user_role");
                     int id = rs.getInt("user_id");
                     User user = new User(email, password,0,0, role);
                     user.setUser_id(id);
@@ -107,11 +107,11 @@ public class UserMapper {
 
                 while (rs.next()) {
                     int user_id = rs.getInt("user_id");
-                    String email = rs.getString("email");
-                    String password = rs.getString("password");
-                    int phone = rs.getInt("phone");
-                    int credit = rs.getInt("credit");
-                    String role = rs.getString("role");
+                    String email = rs.getString("user_email");
+                    String password = rs.getString("user_password");
+                    int phone = rs.getInt("user_phone");
+                    int credit = rs.getInt("user_credit");
+                    String role = rs.getString("user_role");
                     User user = new User(email, password, phone, credit, role);
                     user.setUser_id(user_id);
                     listOfStudents.add(user);
