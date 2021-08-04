@@ -52,7 +52,7 @@ public class AuthorizationFilter implements Filter
                     return;
                 } else
                 {
-                    String role = (String) session.getAttribute("role");
+                    String role = (String) session.getAttribute("user_role");
                     if (role == null || !role.equals(roleFromCommand))
                     {
                         handleIllegalAccess(
