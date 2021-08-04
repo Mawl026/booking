@@ -21,8 +21,8 @@ public class LoginCommand extends CommandUnprotectedPage
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws UserException
     {
-        String email = request.getParameter("email");
-        String password = request.getParameter("password");
+        String email = request.getParameter("user_email");
+        String password = request.getParameter("user_password");
 
         try {
         User user = userFacade.login(email, password);
@@ -30,8 +30,8 @@ public class LoginCommand extends CommandUnprotectedPage
         HttpSession session = request.getSession();
 
         session.setAttribute("user", user);
-        session.setAttribute("role", user.getRole());
-        session.setAttribute("email", email);
+        session.setAttribute("user_role", user.getRole());
+        session.setAttribute("user_email", email);
 
         String pageToShow =  user.getRole() + "page";
         return REDIRECT_INDICATOR + pageToShow;
