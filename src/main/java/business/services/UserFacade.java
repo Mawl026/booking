@@ -17,14 +17,14 @@ public class UserFacade {
     }
 
 
-    public User login(String user_email, String user_password) throws UserException {
-        return userMapper.login(user_email, user_password);
+    public User login(String user_mail, String user_password) throws UserException {
+        return userMapper.login(user_mail, user_password);
 
     }
 
 
-    public User createUser(String user_email, String user_password, int user_phone, int user_credit, String user_role) throws UserException {
-        User user = new User(user_email, user_password, user_phone, user_credit, user_role);
+    public User createUser(String user_mail, String user_password, int user_phone, int user_credit, String user_role) throws UserException {
+        User user = new User(user_mail, user_password, user_phone, user_credit, user_role);
         user = userMapper.createUser(user);
 
         return user;
