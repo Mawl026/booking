@@ -19,7 +19,7 @@ public class FrontController extends HttpServlet
 {
     private final static String USER = "root";
     private final static String PASSWORD = "ROOT123ProxyOracle!Hej026";
-    private final static String URL = "jdbc:mysql://localhost:3306/startcode?serverTimezone=CET";
+    private final static String URL = "jdbc:mysql://localhost:3306/booking?serverTimezone=CET";
 
     public static Database database;
 
