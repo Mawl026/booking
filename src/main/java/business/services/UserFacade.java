@@ -17,14 +17,14 @@ public class UserFacade {
     }
 
 
-    public User login(String email, String password) throws UserException {
-        return userMapper.login(email, password);
+    public User login(String user_email, String user_password) throws UserException {
+        return userMapper.login(user_email, user_password);
 
     }
 
 
-    public User createUser(String email, String password, int phone, int credit, String role) throws UserException {
-        User user = new User(email, password, phone, credit, role);
+    public User createUser(String user_email, String user_password, int user_phone, int user_credit, String user_role) throws UserException {
+        User user = new User(user_email, user_password, user_phone, user_credit, user_role);
         user = userMapper.createUser(user);
 
         return user;
@@ -37,8 +37,8 @@ public class UserFacade {
     }
 
 
-    public void useCredit(int credit, int user_id) throws UserException {
-        userMapper.useCredit(credit, user_id);
+    public void useCredit(int user_credit, int user_id) throws UserException {
+        userMapper.useCredit(user_credit, user_id);
 
     }
 }
