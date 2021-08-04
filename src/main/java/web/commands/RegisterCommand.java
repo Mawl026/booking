@@ -21,25 +21,25 @@ public class RegisterCommand extends CommandProtectedPage {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws UserException {
 
-        String email = request.getParameter("email");
-        String password1 = request.getParameter("password1");
-        String password2 = request.getParameter("password2");
-        int phone = Integer.parseInt(request.getParameter("phone"));
-        int credit = Integer.parseInt(request.getParameter("credit"));
-        String role = request.getParameter("role");
+        String user_mail = request.getParameter("user_mail");
+        String user_password1 = request.getParameter("password1");
+        String user_password2 = request.getParameter("password2");
+        int user_phone = Integer.parseInt(request.getParameter("user_phone"));
+        int user_credit = Integer.parseInt(request.getParameter("user_credit"));
+        String user_role = request.getParameter("user_role");
 
 
-        if (password1.equals(password2)) {
+        if (user_password1.equals(user_password2)) {
 
             HttpSession session = request.getSession();
 
-            User user = userFacade.createUser(email, password1, phone, credit, role);
+            User user = userFacade.createUser(user_mail, user_password1, user_phone, user_credit, user_role);
 
-            session.setAttribute("email", email);
-            session.setAttribute("password", password1);
-            session.setAttribute("phone", phone);
-            session.setAttribute("credit", credit);
-            session.setAttribute("role", role); // or maybe user.getRole(); idk. ??
+            session.setAttribute("user_mail", user_mail);
+            session.setAttribute("user_password", user_password1);
+            session.setAttribute("user_phone", user_phone);
+            session.setAttribute("user_credit", user_credit);
+            session.setAttribute("user_role", user_role); // or maybe user.getRole(); idk. ??
 
 
             request.setAttribute("createUser", user);
