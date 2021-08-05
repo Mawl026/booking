@@ -14,12 +14,12 @@
 
         <div class="d-flex justify-content-center mt-5">
             <br>
-            <a href="${pageContext.request.contextPath}/fc/listofallstudentspage" type="button" class="btn btn-primary btn-lg ms-5">liste over studerende</a>
+            <a href="${pageContext.request.contextPath}/fc/listofstudentspage" type="button" class="btn btn-primary btn-lg ms-5">liste over studerende</a>
         </div>
 
         <div class="d-flex justify-content-center mt-5">
             <br>
-            <a href="${pageContext.request.contextPath}/fc/listofallitemspage" type="button" class="btn btn-primary btn-lg ms-5">liste over udstyr</a>
+            <a href="${pageContext.request.contextPath}/fc/listofitemspage" type="button" class="btn btn-primary btn-lg ms-5">liste over udstyr</a>
         </div>
 
     </jsp:body>

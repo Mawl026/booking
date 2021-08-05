@@ -29,8 +29,13 @@ public abstract class Command
         commands.put("studentpage", new CommandProtectedPage("studentpage", "student"));
         commands.put("teacherpage", new CommandProtectedPage("teacherpage", "teacher"));
 
+        commands.put("listofstudentspage", new CommandProtectedPage("listofstudentspage", "teacher"));
         commands.put("listofstudentscommand", new ListOfStudentsCommand("listofstudentspage", "teacher"));
+
+        commands.put("listofitemspage", new CommandProtectedPage("listofitemspage","teacher"));
         commands.put("listofitemscommand", new ListOfItemsCommand("listofitemspage", "teacher"));
+
+        commands.put("listofbookingspage", new CommandProtectedPage("listofbookingspage", "teacher"));
         commands.put("listofbookingscommand", new ListOfBookingsCommand("listofbookingspage", "teacher"));
 
     }

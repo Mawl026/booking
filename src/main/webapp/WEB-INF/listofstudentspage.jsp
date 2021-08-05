@@ -26,13 +26,13 @@
             </tr>
             </thead>
             <tbody>
-            <c:forEach var="user" items="${requestScope.user}">
+            <c:forEach var="users" items="${requestScope.users}">
                 <tr>
-                    <td>${user.user_id}</td>
-                    <td>${user.user_email}</td>
-                    <td>${user.user_phone}</td>
-                    <td>${user.user_credit}</td>
-                    <td>${user.user_role}</td>
+                    <td>${users.user_id}</td>
+                    <td>${users.user_mail}</td>
+                    <td>${users.user_phone}</td>
+                    <td>${users.user_credit}</td>
+                    <td>${users.user_role}</td>
                 </tr>
             </c:forEach>
             </tbody>
