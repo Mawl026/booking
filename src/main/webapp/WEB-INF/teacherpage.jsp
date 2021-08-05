@@ -22,5 +22,10 @@
             <a href="${pageContext.request.contextPath}/fc/listofitemspage" type="button" class="btn btn-primary btn-lg ms-5">liste over udstyr</a>
         </div>
 
+        <div class="d-flex justify-content-center mt-5">
+            <br>
+            <a href="${pageContext.request.contextPath}/fc/listofbookingspage" type="button" class="btn btn-primary btn-lg ms-5">liste over bookings</a>
+        </div>
+
     </jsp:body>
 </t:genericpage>
