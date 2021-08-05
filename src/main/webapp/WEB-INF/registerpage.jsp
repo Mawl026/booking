@@ -17,12 +17,14 @@
                         <input id="email" class="form-control" type="text" name="email" value="${param.email}" placeholder="Enter a valid email">
                     </div>
                 </div>
+
                 <div class="row mb-3">
                     <label class="col-sm-1 col-form-label" for="password1">Password</label>
                     <div class="col-sm-4">
                         <input id="password1" class="form-control" type="password" name="password1"  value="${param.password1}"  placeholder="Enter your password">
                     </div>
                 </div>
+
                 <div class="row mb-3">
                     <label class="col-sm-1 col-form-label" for="password2">Password</label>
                     <div class="col-sm-4">
