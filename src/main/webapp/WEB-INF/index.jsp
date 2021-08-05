@@ -21,19 +21,19 @@
                 Main page for this 2. semester start project used at cphbusiness.dk
             </div>
 
-            <c:if test="${sessionScope.role == 'teacher' }">
+            <c:if test="${sessionScope.user_role == 'teacher' }">
                 <p style="font-size: larger">This is what you can do,
                     since your are logged in as an teacher</p>
                  <p><a href="fc/teacherpage">Teacher Page</a>
              </c:if>
 
-             <c:if test="${sessionScope.role == 'student' }">
+             <c:if test="${sessionScope.user_role == 'student' }">
                 <p style="font-size: larger">This is what you can do, since your
                     are logged in as a student</p>
                 <p><a href="fc/studentpage">Student Page</a>
             </c:if>
 
-                    <c:if test="${sessionScope.role == 'admin' }">
+                    <c:if test="${sessionScope.user_role == 'admin' }">
             <p style="font-size: larger">This is what you can do, since your
                 are logged in as a admin</p>
             <p><a href="fc/adminpage">Admin Page</a>

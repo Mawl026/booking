@@ -12,8 +12,8 @@
 
     <jsp:body>
 
-        <h3>Du er logget ind som rolle: ${sessionScope.role}</h3>
-        <h3>Teacher ID: ${sessionScope.id}</h3>
+        <h3>Du er logget ind som rolle: ${sessionScope.user_role}</h3>
+        <h3>Teacher ID: ${sessionScope.user_id}</h3>
 
         <table class="table mt-5">
             <thead>

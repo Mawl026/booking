@@ -21,6 +21,7 @@ public class RegisterCommand extends CommandProtectedPage {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws UserException {
 
+        int user_id = Integer.parseInt(request.getParameter("user_id"));
         String user_mail = request.getParameter("user_mail");
         String user_password1 = request.getParameter("password1");
         String user_password2 = request.getParameter("password2");
@@ -35,6 +36,7 @@ public class RegisterCommand extends CommandProtectedPage {
 
             User user = userFacade.createUser(user_mail, user_password1, user_phone, user_credit, user_role);
 
+            session.setAttribute("user_id", user_id);
             session.setAttribute("user_mail", user_mail);
             session.setAttribute("user_password", user_password1);
             session.setAttribute("user_phone", user_phone);
